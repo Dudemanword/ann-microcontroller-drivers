@@ -6,7 +6,6 @@
 #include "stdint.h"
 #include "task.h"
 
-//sudo avarice -4 :4242
 #define USART_BAUDRATE 9600
 #define BAUD_PRESCALE (((( F_CPU / 16) + ( USART_BAUDRATE / 2)) / ( USART_BAUDRATE )) - 1)
 #define STACK_SIZE configMINIMAL_STACK_SIZE
@@ -23,7 +22,6 @@ void UART0Init()
     DDRE &= ~(1 << DDRE0);
     UBRR0L = (uint8_t)(0x2F);
     UBRR0H |= (UBRR0H & 0xF0);
-    /* Enable receiver and transmitter */
     UCSR0B = (1<<RXEN0)|(1<<TXEN0)|(1<<RXCIE0)|(1<<TXCIE0);
     
     UCSR0C |= (1<<UCSZ01)|(1<<UCSZ00);
