@@ -9,7 +9,7 @@ set(PROG_TYPE atmelice)
 set(MCU atmega128a)
 set(BAUD 9600)
 set(F_CPU 7372800UL)
-set(PRODUCT_NAME test)
+set(PRODUCT_NAME ann-drivers)
 set(CMAKE_EXE_LINKER_FLAGS -mmcu=${MCU})
 include_directories(FreeRTOS/Source/include src/HardwareDrivers/include FreeRTOS/PortInclude /usr/avr/include/)
 set(E_FUSE 0xFF)
@@ -29,7 +29,7 @@ add_compile_options(
     -mmcu=${MCU} # MCU
 )
 
-FILE(GLOB SRC_FILES src/*.c FreeRTOS/Source/*.c FreeRTOS/PortInclude/*.c src/HardwareDrivers/*.c)
+FILE(GLOB SRC_FILES src/*.c FreeRTOS/Source/*.c src/HardwareDrivers/*.c)
 
 add_executable(${PRODUCT_NAME} ${SRC_FILES})
 set_target_properties(${PRODUCT_NAME} PROPERTIES OUTPUT_NAME ${PRODUCT_NAME}.elf)

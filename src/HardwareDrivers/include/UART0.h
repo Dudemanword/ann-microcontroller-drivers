@@ -1,7 +1,10 @@
 #ifndef UART0_H_
 #define UART0_H_
 
-void UART0Init();
-void UartTask();
+#include "FreeRTOS.h"
+#include "queue.h"
+
+void UART0Init(QueueHandle_t* queueHandle);
+void Uart0Task();
 
 #endif

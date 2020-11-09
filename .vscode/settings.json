@@ -4,5 +4,13 @@
         "${workspaceFolder}/src/HardwareDrivers/include/*",
         "${workspaceFolder}/FreeRTOS/Source/include/*",
         "${workspaceFolder}/FreeRTOS/PortInclude/*",
-    ]
+    ],
+    "files.associations": {
+        "chrono": "c",
+        "algorithm": "c"
+    },
+    "python.pythonPath": "test/venv/bin/python",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
 }

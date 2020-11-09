@@ -5,13 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
             "type": "gdb",
             "request": "attach",
             "name": "Attach to gdbserver",
             "executable": "build/test.elf",
             "target": "localhost:4242",
             "remote": true,
-            "cwd": "${workspaceRoot}", 
+            "cwd": "${workspaceRoot}",
             "gdbpath": "/usr/bin/avr-gdb",
         }
     ]
